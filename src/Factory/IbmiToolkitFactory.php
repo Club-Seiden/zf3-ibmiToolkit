@@ -35,7 +35,7 @@ final class IbmiToolkitFactory implements FactoryInterface
             '0'
         );
 
-        $toolkit->setOptions($toolkitConfig);
+        $toolkit->setOptions($toolkitConfig['system']);
 
         return $toolkit;
     }
