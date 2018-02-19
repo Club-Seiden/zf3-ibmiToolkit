@@ -25,7 +25,7 @@ return [
         /**
          * Debug
          *
-         * Sets PHP toolkit's debug mode on or off (true/valse)
+         * Sets PHP toolkit's debug mode on or off (true/false)
          */
         'debug' => false,
 
