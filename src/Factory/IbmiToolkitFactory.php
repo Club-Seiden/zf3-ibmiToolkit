@@ -24,18 +24,15 @@ final class IbmiToolkitFactory implements FactoryInterface
     {
         /** @var ServiceManager $container **/
 
-        /** @var array $toolkitConfig */
-        $toolkitConfig = $container->get('Config')['ibmi_toolkit'];
-
         /** @var Adapter $databaseAdapter */
-        $databaseAdapter = $container->get($toolkitConfig['databaseAdapterService']);
+        $databaseAdapter = $container->get($container->get('Config')['ibmi_toolkit_module']['databaseAdapterService']);
 
         $toolkit = new Toolkit(
             $databaseAdapter->getDriver()->getConnection()->getResource(),
             '0'
         );
 
-        $toolkit->setOptions($toolkitConfig);
+        $toolkit->setOptions($container->get('Config')['ibmi_toolkit']);
 
         return $toolkit;
     }
